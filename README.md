@@ -1,4 +1,5 @@
 # Estimación inicial de un proyecto de desarrollo de software.
+**Work in progress**
 
 ## 1. Introducción.
 La idea de realizar este trabajo surge después de la asistencia virtual a conferencias y charlas de algunas comunidades latinas de desarrolladores que encontré en [Twitter](https://twitter.com), en las que con frecuencia se realiza la pregunta **¿Cómo estimo un proyecto?** Hay videos y artículos (muy buenos) que tratan del tema, pero en ninguno se desarrolla un ejercicio completo, y por lo tanto, considero que la pregunta todavía no tiene respuesta (al menos que yo sepa).<br>
@@ -24,7 +25,7 @@ No estoy casado con ninguna metodología, si algo de una te sirve en otra, úsal
    Aplicación de escritorio que permite realizar planeación y administración de proyectos basados en cascada.
 
 ## 3. Entrevista inicial con usuario.
-Me encontré en [Youtube](https://youtube.com) un video en el que se explica una forma de realizar un **plan de mantenimiento preventivo de maquinaria**, tan bien desarrollado, que se me ocurrió usarlo como ejemplo de una entrevista inicial con un usuario ficticio que requiere de un software que le permita realizar y ejecutar el plan y te contrata para que hagas el desarrollo. Tiene suficientes elementos para mostrar los diferentes aspectos a considerar en un desarrollo de software.
+Me encontré en [Youtube](https://youtube.com) un video en el que se explica una forma de realizar un **plan de mantenimiento preventivo de maquinaria**, tan bien desarrollado, que se me ocurrió usarlo como ejemplo de una entrevista inicial con un usuario ficticio que requiere de un software que le permita realizar y ejecutar el plan y te contrata para que hagas el desarrollo. Tiene suficientes elementos para mostrar los diferentes aspectos a considerar en un proyecto de desarrollo de software.
 
 Antes de continuar te invito a que veas el siguiente video [7 PASOS PARA REALIZAR UN PROGRAMA DE MANTENIMIENTO | ISO 9001](https://www.youtube.com/watch?v=umnJt1e9lWM)
 
@@ -81,13 +82,14 @@ Aqui pon cosas que identifiques y que el cliente no ha mencionado, es muy probab
 ## 5. Requerimientos no funcionales.
 Despliegue - Aplicación web en intranet
 
-### 6. Requerimientos funcionales.
+### 6. Características y Requerimientos funcionales.
 
 ### 6.1 Características (Features).
 
 ### 6.2 Requerimientos funcionales.
 
 ## 7. Priorización
+Los requerimientos iniciales formarán parte de la versión 1.0, a partir de ahí se irán agregando más módulos (los que estan fuera de alcance, si el cliente los acepta). 
 
 ## 8. Riesgos.
 El análisis de riesgos es una parte muy importante, porque si identificas un riesgo de impacto medio o alto que no pueda ser eliminado, tal vez no deberías continuar con la ejecución del proyecto.
@@ -118,7 +120,7 @@ Recuerda, **esta es una estimación inicial**, en circunstancias de **alta incer
 
 Calcula costos para la implementación de las cosas que quedan fuera del alcance del proyecto y la resolución de los riesgos, para que sepas cuánto más va a costar el proyecto en caso de ser incluidas, así también podrás informar inmediatamente el costo extra, cuando el cliente te diga que sí quiere incluir algo que propones.
 
-Incluye **TODAS** las actividades a realizar durante el proyecto, presentaciones, juntas, lecturas de documentos propios del cliente, investigación y pruebas de API o WSDL, instalación y configuración de servidores de aplicaciones o bases de datos, módulos no especificados por el cliente pero sabes que tienes que hacerlos (menús, configuración de la aplicación, ayuda contextual, control de acceso) etc.
+Incluye **TODAS** las actividades a realizar durante el proyecto, presentaciones, juntas, lecturas de documentos propios del cliente, investigación y pruebas de API o WSDL, instalación y configuración de servidores de aplicaciones o bases de datos, cotizaciones, capacitación de usuarios, redacción de manuales, módulos no especificados por el cliente pero sabes que tienes que hacerlos (menús, configuración de la aplicación, ayuda contextual, control de acceso) etc. **Recuerda que en México existe la Ley de Protección de Datos en Posesión de Particulares**, si guardas datos de los usuarios, debes apegarte esta ley.
 
 Por supuesto, incluye el tiempo que te lleva preparar la propuesta inicial.
 
@@ -134,7 +136,7 @@ El importe mensual de cada uno de estos conceptos divídelo entre 30.4, este es 
 A estos equipos, contablemente (en México) se les calcula una vida útil de dos años. Divide el valor de compra entre 24 y tendrás la depreciación mensual de tu equipo. Cárgalo al proyecto, por los meses que le dediques.
 
 #### Licencias de software.
-Incluye la compra de software y los pagos mensuales/anuales que hagas a GitHub, Heroku, Notion y todo el software que uses para hacer tu trabajo. Igual, calcula el importe mensual y cárgalo al proyecto, por los días que le dediques.
+Incluye la compra de software y los pagos mensuales/anuales que hagas a GitHub, Heroku, mailtrap, Notion y todo el software que uses para hacer tu trabajo. Igual, calcula el importe mensual y cárgalo al proyecto, por los días que le dediques.
 
 ## 9. Propuesta
 En el archivo **mm-propuesta.odt** (Libre Office) te muestro un ejemplo de propuesta, que, una vez aceptada, llevará a la firma de un contrato. 
@@ -150,7 +152,7 @@ c) **bienvenidos los cambios** - en verdad ¿con cuánta rapidez puedes responde
 
 d) **MVP** - para mí, lo que tiene valor para el cliente, tiene dependencias, y hay que desarrollar esas dependencias antes de poder darle algo de valor.
 
-e) **estimaciones por puntos** - que no se convierten en tiempo! Entonces ¿cómo sabes cuántos Sprints vas a necesitar?
+e) **estimaciones por puntos** - que no equivalen a tiempo! Entonces ¿cómo sabes cuántos Sprints vas a necesitar?
 
 f) **estimaciones realizadas por un equipo que todavía no existe** durante una estimación inicial.
 
