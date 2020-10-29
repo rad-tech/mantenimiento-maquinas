@@ -24,12 +24,16 @@ No estoy casado con ninguna metodología, si algo de una te sirve en otra, úsal
 3. [ProjectLibre 1.9.2 (community edition)](https://www.projectlibre.com/)<br>
    Aplicación de escritorio que permite realizar planeación y administración de proyectos basados en cascada.
 
+4. [LibreOffice](https://www.libreoffice.org/discover/libreoffice/)
+
 ## 3. Entrevista inicial con usuario.
 Me encontré en [Youtube](https://youtube.com) un video en el que se explica una forma de realizar un **plan de mantenimiento preventivo de maquinaria**, tan bien desarrollado, que se me ocurrió usarlo como ejemplo de una entrevista inicial con un usuario ficticio que requiere de un software que le permita realizar y ejecutar el plan y te contrata para que hagas el desarrollo. Tiene suficientes elementos para mostrar los diferentes aspectos a considerar en un proyecto de desarrollo de software.
 
 Antes de continuar te invito a que veas el siguiente video [7 PASOS PARA REALIZAR UN PROGRAMA DE MANTENIMIENTO | ISO 9001](https://www.youtube.com/watch?v=umnJt1e9lWM)
 
 Te propongo un reto, estima el tiempo y costo de desarrollo del software para éste cliente, a ojo de pájaro, sin ningún análisis como el que vamos a desarrollar aquí, anótalo. Ahora, haz el ejercicio completo y vé cuanto tiempo y costo obtienes. Tal vez te sorprendas de lo barato que los estabas dejando.
+
+El proceso de estimación es iterativo, no se realiza una tarea y luego otra. Se van construyendo todos los elementos poco a poco ya que están muy interrelacionados. Mientras defines un Requerimiento funcional, se te ocurre un posible riesgo, o algo que estaría fuera del alcance. Cuando estás estimando, te das cuenta que te falta un Requerimiento o una Definición o un Requerimiento no funcional, etc.
 
 ### 3.1 Notas de la entrevista inicial.
 Estas son mis notas obtenidas durante la entrevista inicial.
@@ -88,10 +92,15 @@ Despliegue - Aplicación web en intranet
 
 ### 6.2 Requerimientos funcionales.
 
-## 7. Priorización
-Los requerimientos iniciales formarán parte de la versión 1.0, a partir de ahí se irán agregando más módulos (los que estan fuera de alcance, si el cliente los acepta). 
+## 7. Modelo de Dominio
+Es muy importante, ya que te permite identificar actores, objetos (entidades), relaciones y dependencias entre objetos, etc. En base a él podrás determinar la complejidad de cada requerimiento funcional, operaciones a realizar, atributos por objetos, etc.
 
-## 8. Riesgos.
+**mm-dominio.mdj** (StarUML)
+
+## 8. Priorización
+Los requerimientos iniciales formarán parte de la versión 1.0, a partir de ahí se irán agregando más módulos (los que estan fuera de alcance, si el cliente los acepta) o nuevos requerimientos. 
+
+## 9. Riesgos.
 El análisis de riesgos es una parte muy importante, porque si identificas un riesgo de impacto medio o alto que no pueda ser eliminado, tal vez no deberías continuar con la ejecución del proyecto.
 
 Inicialmente todos los riesgos tienen prioridad alta, en la presentación de la propuesta (o antes si es posible), se aclara la probabilidad de ocurrencia y se determina su impacto, modificando su estado.
@@ -115,7 +124,7 @@ Transferir|Transferir el riesgo a un tercero.
 Mitigar|Tomar acciones para disminuir la probabilidad de ocurrencia o impacto del riesgo.
 Aceptar|No se toman acciones hasta que el riesgo ocurre.
 
-## 9. Estimación de tiempo y costos.
+## 10. Estimación de tiempo y costos.
 Recuerda, **esta es una estimación inicial**, en circunstancias de **alta incertidumbre** ya que sólo has tenido una entrevista con el cliente, y debe ser actualizado conforme avanza el proyecto, debido principalmente a cambios en el alcance y los requerimientos.
 
 Calcula costos para la implementación de las cosas que quedan fuera del alcance del proyecto y la resolución de los riesgos, para que sepas cuánto más va a costar el proyecto en caso de ser incluidas, así también podrás informar inmediatamente el costo extra, cuando el cliente te diga que sí quiere incluir algo que propones.
@@ -128,17 +137,17 @@ Para estimar tiempo para hacer algo, considera lo siguiente: a) sabes como hacer
 
 En el archihvo **mm-estimacion.pod** (ProjectLibre) presento la estructura de desglose de trabajo y estimación de tiempo y costos.
 
-### 9.1 Costos fijos
+### 10.1 Costos fijos
 #### Energía eléctrica, teléfono, internet.
 El importe mensual de cada uno de estos conceptos divídelo entre 30.4, este es el importe diario que pagas, cárgalo al proyecto, por los días que le dediques.
 
-#### Amortización de equipos (computadoras, impresoras).
+#### 10.2 Amortización de equipos (computadoras, impresoras).
 A estos equipos, contablemente (en México) se les calcula una vida útil de dos años. Divide el valor de compra entre 24 y tendrás la depreciación mensual de tu equipo. Cárgalo al proyecto, por los meses que le dediques.
 
-#### Licencias de software.
+#### 10.3 Licencias de software.
 Incluye la compra de software y los pagos mensuales/anuales que hagas a GitHub, Heroku, mailtrap, Notion y todo el software que uses para hacer tu trabajo. Igual, calcula el importe mensual y cárgalo al proyecto, por los días que le dediques.
 
-## 9. Propuesta
+## 11. Propuesta
 En el archivo **mm-propuesta.odt** (Libre Office) te muestro un ejemplo de propuesta, que, una vez aceptada, llevará a la firma de un contrato. 
 
 ## Apéndice 1 - Agilidad
@@ -162,6 +171,33 @@ Obviamente necesito participar en un proyecto ágil, o una formateada de cerebro
 
 ## Apéndice 2 - Microadministración
 No caigas en la trampa de la Microadministración, te vas a ahorcar tú mismo. Microadministrar es registrar tantas cosas, que te lleva más tiempo hacerlo, que lo que te lleva construir el software. El registro al minuto, de qué haces es muy frecuente en las empresas de consultoría, en donde tienes que justificar tu tiempo con bitácoras. A tu cliente le importa el software, no tu bitácora, y si acaso te la pide, **aclarale que le va a costar y el proyecto tomara mas tiempo para completarse**.
+
+
+## Apéndice 3 - Recursos
+
+[OSRMT 1.8](https://sourceforge.net/projects/osrmt/)
+
+[ProjectLibre](https://sourceforge.net/projects/projectlibre/)
+
+[ProjectLibre Tutorial](https://www.youtube.com/watch?v=9xwR4JCBaIU&feature=youtu.be)
+
+[StarUML](http://staruml.io/)
+
+[LibreOffice](https://www.libreoffice.org/discover/libreoffice/)
+
+1. OpenProj The open source solution for managing your projects, Lisa A. Bucki
+2. Mastering Non-Functional Requirements, Sameer Paradkar, Packt Publishing
+3. SWEBOK 3.0 IEEE Computer Society
+4. BABOK 3.0, International Institute of Business Analysis
+5. PMBOK 5th edition, Project Management Institute, Inc.
+6. Practice Standard for Project Risk Management, Project Management Institute, Inc.
+7. Practice Standard for Work Breakdown Structures 2nd Edition, Project Management Institute, Inc.
+8. Practice Standard for Project Estimating, Project Management Institute, Inc.
+9. Análisis y diseño de sistemas 8a edición, Kendall & Kendall, Pearson
+10. Ingeniería de software 9a edición, Sommerville, Pearson
+11. El Lenguaje Unificado de Modelado (UML 2.0), Grady Booch James Rumbaugh, Ivar Jacobson, Addison Wesley
+12. El Lenguaje Unificado de Modelado - Manual de referencia (UML 2.0), Grady Booch James Rumbaugh, Ivar Jacobson, Addison Wesley
+
 
 
 
