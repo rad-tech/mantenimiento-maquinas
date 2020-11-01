@@ -10,7 +10,7 @@ Este trabajo se basa en el **modelo en Cascada**, ¿por qué?, por las herramien
 
 No estoy casado con ninguna metodología, si algo de una te sirve en otra, úsalo, nadie te va a meter a la cárcel por eso, el objetivo es tener un sóftware que satisface los requerimientos del cliente, dentro del tiempo y presupuesto establecidos (*jaja, ésta es la teoría académica*). Y recuerda, **ésta es una estimación inicial basada en los conocimientos actuales** que tienes del proyecto en cuestión, **deja esto bien claro al cliente**, muchos toman esta estimación como el costo definitivo del proyecto.
 
-**Hay que poder definir (por el bien de Cliente y del Desarrollador) cuándo un producto está terminado y cuándo el alcance a variado y hay que cobrar más y ocupar más tiempo para hacerlo**.
+**Hay que poder definir (por el bien del Cliente y del Desarrollador) cuándo un producto está terminado y cuándo el alcance a variado y hay que cobrar más y ocupar más tiempo para hacerlo**.
 
 ## 2. Herramientas utilizadas.
 
@@ -24,7 +24,8 @@ No estoy casado con ninguna metodología, si algo de una te sirve en otra, úsal
 3. [ProjectLibre 1.9.2 (community edition)](https://www.projectlibre.com/)<br>
    Aplicación de escritorio que permite realizar planeación y administración de proyectos basados en cascada.
 
-4. [LibreOffice](https://www.libreoffice.org/discover/libreoffice/)
+4. [LibreOffice](https://www.libreoffice.org/discover/libreoffice/)<br>
+   Aplicaciones para Hojas de cálculo y procesamiento de texto, entre otras.
 
 ## 3. Entrevista inicial con usuario.
 Me encontré en [Youtube](https://youtube.com) un video en el que se explica una forma de realizar un **plan de mantenimiento preventivo de maquinaria**, tan bien desarrollado, que se me ocurrió usarlo como ejemplo de una entrevista inicial con un usuario ficticio que requiere de un software que le permita realizar y ejecutar el plan y te contrata para que hagas el desarrollo. Tiene suficientes elementos para mostrar los diferentes aspectos a considerar en un proyecto de desarrollo de software.
@@ -35,16 +36,23 @@ Te propongo un reto, estima el tiempo y costo de desarrollo del software para é
 
 El proceso de estimación es iterativo, no se realiza una tarea y luego otra. Se van construyendo todos los elementos poco a poco ya que están muy interrelacionados. Mientras defines un Requerimiento funcional, se te ocurre un posible riesgo, o algo que estaría fuera del alcance. Cuando estás estimando, te das cuenta que te falta un Requerimiento o una Definición o un Requerimiento no funcional, etc.
 
+La estimación la comienzo determinando las funcionalidades y los requerimientos asociados a ellas. Necesito además definir las pruebas de aceptación, qué cosas parecen estar fuera del alcance, así como definiciones (todo esto en OSRMT). Junto con esto voy identificando riesgos (hoja de cálculo), y el modelo de dominio (staruml). Puedes ir armando la estrucura de trabajo (ProjectLibre), pero prefiero, una vez tengo todo definido, exportar los datos de OSRMT a un archivo CSV, agrupar y ordenar y luego pegar la lista en ProjectLibre, para hacer las estimaciones de tiempo y costo.
+
+¿Has escuchado de **Parálisis del Análisis**? Es un error cometido en el que nunca comienzas a trabajar realmente, porque nunca terminas de analizar. Lleva tu análisis a un detalle razonable, en el que te sientas cómodo y te permita hacer una estimación realista.
+
+TODO Imagen herramientas
+
+
 ### 3.1 Notas de la entrevista inicial.
 Estas son mis notas obtenidas durante la entrevista inicial.
 
 ```
 ISO-9001
 
-1. identificación de máquinas, asignando un código
+1. Identificación de máquinas, asignando un código
 	a) código de proceso PRoducción, LoGistica, CAlidad, ManTenimiento
 	a.1) subproceso opcional
-	b) código por ser una máquina: MaQuina, Seguimiento y Medición
+	b) código por ser una máquina: MaQuina, equipo de Seguimiento y Medición
 	c) consecutivo por tipo de máquina: Estampadora-01, Laser-02
 	d) consecutivo por cantidad: secuencial
 
@@ -76,26 +84,112 @@ ISO-9001
 
 Manual de la máquina
 ```
+Cada uno de los números en la lista anterior será una Capacidad del sistema.
 
 ## 4. Identificación de cosas que quedan fuera del alcance del proyecto.
 Aqui pon cosas que identifiques y que el cliente no ha mencionado, es muy probable que los haya dado por hecho, y cuando presentes la propuesta (o antes, si es posible), pregunta al cliente si quiere incluirlas en el proyecto (entonces se convertiran en capacidades y requerimientos).
 
-1. Administración de usuarios
-2. Administración de localidades
+TODO OSRMT OOS 
 
 ## 5. Requerimientos no funcionales.
-Despliegue - Aplicación web en intranet
+Utiliza la clasificación **FURPS+** (yo utilizo los mnemónicos indicados) y asocialos a las Capacidades.
+
+TIPO|DESCRIPCION|MNEMONICO
+-|-|-
+**Usability**	|	fUrps - Usabilidad	|	USA  
+Human factors	|		|	HFA  
+Aesthetics	|		|	AES  
+UI consistency	|		|	UIC  
+Context Help	|		|	CHP  
+Wizard	|		|	WIZ  
+User documentation	|		|	DOC  
+Traning material	|		|	TRA  
+
+TIPO|DESCRIPCION|MNEMONICO
+-|-|-
+**Reliability**|	fuRps - Confiabilidad	|	REL  
+Frecuency of failure	|		|	FRF  
+Severity of failure	|		|	SVF  
+Recoverability	|		|	REC  
+Predicatability	|		|	PRE  
+Accuracy	|		|	ACC  
+MTBF	|		|	MTBF 
+
+TIPO|DESCRIPCION|MNEMONICO
+-|-|-
+**Performance**	|	furPs - Rendimiento	|	PER  
+Speed	|		|	SPD  
+Efficiency	|		|	EFF  
+Availability	|		|	AVA  
+Accuracy	|		|	ACCU 
+Throughput	|		|	THR  
+Response time	|		|	RSP  
+Recovery time	|		|	RCT  
+Resource usage	|		|	RSU  
+
+TIPO|DESCRIPCION|MNEMONICO
+-|-|-
+**Supportability**	|	furpS - Factores durante/despues implementación	|	SUP  
+Testability	|	Mocks	|	TST  
+Extensibility	|		|	EXT  
+Adaptability	|		|	ADP  
+Maintainability	|		|	MAI  
+Compatibility	|	Web, Cliente, SO, Servidor	|	COM  
+Configurability	|		|	CNF  
+Serviceability	|	parches	|	SRV  
+Instalability	|	setup	|	INS  
+Localizability	|	I18N	|	LOC  
+Scalability	|		|	SCA  
+
+TIPO|DESCRIPCION|MNEMONICO
+-|-|-
+**Design**	|	MVC, N capas, OOP, Estructurado, Distribuido	|	DES  
+**Implementation**	|	Estandards, Frameworks, Lenguaje, Entorno de operacion	|	IMP  
+**Interface**	|	Web services, Protocolos, Formatos de archivo	|	INT  
+**Physical**	|	Hardware	|	PHY  
+
+TODO OSRMT NFR
 
 ### 6. Características y Requerimientos funcionales.
 
 ### 6.1 Características (Features).
 
+TIPO|DESCRIPCION|MNEMONICO
+-|-|-
+Feature	|	Característica	|	FEA
+Out of scope	|	Cosas fuera del alcance del proyecto	|	OOS  
+Definition	|	Una definición para Diccionario de datos	|	DEF  
+Fact	|	Hecho	|	FAC  
+Law	|	Ley	|	LAW  
+Policy	|	Politica empresarial	|	POL  
+SLA	|	Service Level Agreement	|	SLA  
+Rule	|	Regla	|	RUL  
+Assumption	|	Suposición	|	ASS  
+Prod-Screen	|		|	PSCR 
+Prod-Report	|		|	PREP 
+Prod-Process	|		|	PPRO 
+Prod-Artifact	|		|	PART 
+Prod-Service	|		|	PSER 
+
+TODO OSRMT Features
+
 ### 6.2 Requerimientos funcionales.
+
+TIPO|DESCRIPCION|MNEMONICO
+-|-|-
+**Requirement**	|	Functional requirement	|	FUN  
+**Security**	|	Seguridad, es un requerimiento funcional	|	SEC  
+
+TODO OSRMT FUN, SEC
 
 ## 7. Modelo de Dominio
 Es muy importante, ya que te permite identificar actores, objetos (entidades), relaciones y dependencias entre objetos, etc. En base a él podrás determinar la complejidad de cada requerimiento funcional, operaciones a realizar, atributos por objetos, etc.
 
 **mm-dominio.mdj** (StarUML)
+
+Las clases con color de fondo blanco son las identificadas en la entrevista inicial. Las clases con fondo azul, corresponden a cosas que están fuera del alcance actualmente. Las clases con fondo amarillo son copias de la original (blanco), las uso para evitar cruces de líneas en el modelo.
+
+TODO modelo dominio
 
 ## 8. Priorización
 Los requerimientos iniciales formarán parte de la versión 1.0, a partir de ahí se irán agregando más módulos (los que estan fuera de alcance, si el cliente los acepta) o nuevos requerimientos. 
@@ -103,9 +197,9 @@ Los requerimientos iniciales formarán parte de la versión 1.0, a partir de ah�
 ## 9. Riesgos.
 El análisis de riesgos es una parte muy importante, porque si identificas un riesgo de impacto medio o alto que no pueda ser eliminado, tal vez no deberías continuar con la ejecución del proyecto.
 
-Inicialmente todos los riesgos tienen prioridad alta, en la presentación de la propuesta (o antes si es posible), se aclara la probabilidad de ocurrencia y se determina su impacto, modificando su estado.
+Inicialmente todos los riesgos tienen prioridad alta, en la presentación de la propuesta (o antes si es posible), se aclara la probabilidad de ocurrencia y se determina su impacto, modificando su estado y las acciones a implementar.
 
-En el archivo **mm-analisis_riesgos.ods** (Libre Office) presento el análisis correspondiente.
+En el archivo **mm-analisis_riesgos.ods** (Libre Office) presento el análisis correspondiente. Los riesgos deberán monitorearse durante el desarrollo del software, pues su estatus puede cambiar, además de surgir nuevos.
 
 Probabilidad|Significado
 -|-
@@ -124,6 +218,8 @@ Transferir|Transferir el riesgo a un tercero.
 Mitigar|Tomar acciones para disminuir la probabilidad de ocurrencia o impacto del riesgo.
 Aceptar|No se toman acciones hasta que el riesgo ocurre.
 
+TODO riesgos
+
 ## 10. Estimación de tiempo y costos.
 Recuerda, **esta es una estimación inicial**, en circunstancias de **alta incertidumbre** ya que sólo has tenido una entrevista con el cliente, y debe ser actualizado conforme avanza el proyecto, debido principalmente a cambios en el alcance y los requerimientos.
 
@@ -136,6 +232,8 @@ Por supuesto, incluye el tiempo que te lleva preparar la propuesta inicial.
 Para estimar tiempo para hacer algo, considera lo siguiente: a) sabes como hacerlo y los has hecho antes, b) no lo has hecho, pero sabes como se hace, c) no tienes idea de como se hace.
 
 En el archihvo **mm-estimacion.pod** (ProjectLibre) presento la estructura de desglose de trabajo y estimación de tiempo y costos.
+
+TODO estimacion
 
 ### 10.1 Costos fijos
 #### Energía eléctrica, teléfono, internet.
