@@ -1,0 +1,136 @@
+ARTIFACT_NAME,DESCRIPTION,
+DEF-001 Máquina,"Equipo mecánico, electrónico utilizado en los procesos de transformación de materiales.",001
+DEF-002 Usuario,"Persona empleada de la empresa.
+",002
+DEF-003 Administrador de Planes de mantenimiento,"Mantiene el catálogo de Máquinas.
+Asigna operarios al Plan de mantenimiento.
+Asigna Proveedores al las tareas del Plan de mantenimiento.",003
+DEF-004 Proveedor,Empresa externa que vende/renta y mantiene la Maquinaria adquirida/contratada por la Empresa.,004
+DEF-005 Plan de mantenimiento,Actividades y tareas a realizar periódicamente para garantizar el buen funcionamiento de las Máquinas.,005
+DEF-006 Tarea de mantenimiento,"Actividad individual a realizar durante un mantenimiento.
+Cambio de banda, Cambio de aceite, Ajuste, etc.",006
+DEF-007 Operador de Máquina,Empleado de la Empresa capaz de realizar ciertas Tareas de mantenimiento de una Máquina.,007
+FEA-001 Identificar máquinas mediante un código,"1. identificación de máquinas, asignando un código
+	a) código de proceso PRoducción, LoGistica, CAlidad, ManTenimiento
+	a.1) subproceso opcional
+	b) código por ser una máquina: MaQuina, Seguimiento y Medición
+	c) consecutivo por tipo de máquina: Estampadora-01, Laser-02
+	d) consecutivo por cantidad: secuencial",001
+FEA-002 Listado de máquinas,"2. Listado de máquinas:
+	Datos: Máquina, Código (paso 1), Marca, Modelo, No. de serie, [Ubicación,] Estado [Activa, Mantenimiento]",002
+FEA-003 Identificación física de máquinas,"3. Identificar las máquinas:
+	a) Etiquetado (adherible), Marcado (pintura)
+	Datos: Nombre de máquina, código",003
+FEA-004 Crear plan de mantenimiento,"4. Crear plan de mantenimiento preventivo:
+	a) Periodicidad: Diario, Semanal, Quincenal, Mensual, Bimestral, Trimestral, Semestral, Anual
+	b) formato: mm-formato-plan_manto.png",004
+FEA-005 Crear ficha de mantenimiento preventivo,"5. Crear ficha de mantenimiento preventivo (individual por máquina - mm-formato-ficha_manto.png)
+	a) archivar ficha cada vez que se realiza mantenimiento
+	b) actividades de manto. realizadas por operador o por personal de mantenimiento",005
+FEA-006 Crear ficha de mantenimiento correctivo,"6. Crear ficha de mantenimiento correctivo
+	Datos: mismos datos que mantenimiento preventivo
+	       Comentarios acerca de falla de la máquina
+	       Persona que reporta
+	       Fecha del reporte
+	       Mantenimiento realizado
+	       Fecha de entrega de la máquina
+	       Responsable del manteniminento",006
+FEA-007 Crear carpeta de mantenimiento por máquina,"7. Crear carpeta de mantenimiento por máquina.
+La implementación misma del sistema, provee esta Capacidad.
+",007
+FEA-008 Mantenimiento de Usuarios,,008
+FEA-009 Mantenimiento de Módulos,"Módulos del sistema, Usuarios que tienen acceso a ellos y actividades que pueden realizar.",009
+FUN-001-001 Administración de códigos de Proceso,"código de proceso PRoducción, LoGistica, CAlidad, ManTenimiento",001
+FUN-001-002 Administración de catálogo de Subprocesos,Opcional,001
+FUN-001-003 Administración de catálogo Máquina,"código por ser una máquina: MaQuina, Seguimiento y Medición",001
+FUN-001-004 Mantenimiento de consecutivo pot tipo de Máquina,"consecutivo por tipo de máquina: Estampadora-01, Laser-02",001
+FUN-001-005 Generación de números secuenciales,consecutivo por cantidad: secuencial,001
+FUN-002-001 Mantenimiento de listado de Máquinas,Cada máquina tiene su código asociado,002
+FUN-003-001 Identificación física de Máquinas,"Definir si se va a imprimir Código de barras, Descripción textual...",003
+FUN-004-001 Administración de Plan de mantenimiento por Máquina,Indicar Tarea a realizar y su Periodicidad la secuencia en que se realizan y quién la realiza.,004
+FUN-005-001 Administración de Fichas de mantenimiento,Una Ficha de mantenimiento es un registro de las actividades realizadas durante un mantenimiento específico.,005
+FUN-006-001 Administrar Fichas de mantenimiento correctivo.,Un Usuario crea o modifica una Solicitud de mantenimiento.,006
+FUN-008-001 Administración de Usuarios,Usuarios del sistema.,008
+FUN-009-001 Administración de Módulos del sistema,"Módulos del sistema, Usuarios que tienen acceso a ellos y actividades que pueden realizar.",009
+FUN-100-001 Manual de máquina,"Un Manual puede existir en modo impreso.
+Un Manual puede ser digitalizado.
+Un Manual impreso puede ser prestado a un Operador.",100
+FUN-101-001 Administración de Usuarios,Un usuario tiene permiso de acceder a ciertos módulos y realizar ciertas tareas.,101
+FUN-102-001 Administración de Localidades,"Una localidad, es una Planta en la cual se encuentran las Máquinas.",102
+FUN-103-001 Administración de Refacciones,"Las refacciones son necesarias para realizar una tarea de mantenimiento.
+Se conoce el Proveedor y la cantidad requerida en un mantenimiento.
+Es posible programar un pedido de refacciones, de acuerdo a los mantenimientos preventivos planeados para, por ejemplo, un mes.",103
+FUN-104-001 Administración de Proveedores,"Un Proveedor vende o renta una Máquina, así como las refacciones para realizar los mantenimientos preventivos.
+Un Proveedor atiende a solicitudes de Mantenimiento correctivo. ",104
+FUN-105-001 Administración de Solicitudes de mantenimiento correctivo,Un Usuario crea o modifica la solicitud.,105
+FUN-SEC-001 Autenticación,"OAuth, LDAP, 2FA",SEC
+FUN-SEC-001 Authenticación,"OAuth, LDAP, 2FA",SEC
+FUN-SEC-002 Autorización,Administrar catálogo de módulos y roles para limitar el acceso de los usuarios.,SEC
+FUN-SEC-003 Manejo de sesión,"¿Se forzará el cierre de la sesión después de cierto tiempo de inactividad?
+¿Se usarán Cookies?",SEC
+FUN-SEC-004 Auditoría de actividad,¿Guardar un registro de las actividades realizadas en la aplicación por cada usuario?,SEC
+FUN-SEC-005 Ley Protección de Datos en Posesión de Particulares,¿Los datos de usuario requeridos por la aplicación son considerados sensibles?,SEC
+FUN-SEC-006 Vigencia de contraseñas,"Reglas que debe cumplir una contraseña.
+¿En cuánto tiempo, el usuario deberá cambiar contraseña?",SEC
+FUN-SEC-007 CSRF,Cross Site Request Forgery protection,SEC
+FUN-SEC-008 SQL Injection,Avoid SLQ injection,SEC
+FUN-SEC-009 XSS,Cross-Site Scripting prevention,SEC
+LAW-01 ISO-9001,"¿Qué implicaciones en los procesos tiene esta norma?
+¿Reportes?
+¿Reglas?
+¿Especificaciones?",01 
+NFR-DES Diseño,"MVC, N Capas, MVP, MVVP, OOP, Estrucurado, Distribuido",DES
+NFR-IMP Implementación,,IMP
+NFR-IMP Implementación,"Frameworks, Lenguaje programación, RBMS Triggers",IMP
+NFR-IMP-001 Aplicación web responsiva,"Mobile first
+",IMP
+NFR-INT Interfaces,"Web Service, RESP, GraphQL, Formatos de archivo, Protocolos",INT
+NFR-PER-ACCU Exactitud,,PER
+NFR-PER-AVA Disponibilidad,La aplicación debe estar disponible 24/7.,PER
+NFR-PER-EFF Eficiencia,,PER
+NFR-PER-RCT Tiempo de recuperación,,PER
+NFR-PER-RSP Tiempo de respuesta,,PER
+NFR-PER-RSU Uso de recursos,,PER
+NFR-PER-SPD Velocidad,,PER
+NFR-PER-THR Rendimiento,,PER
+NFR-PHY Hardware,,PHY
+NFR-REL-ACC Exactitud,Grado de precisión de cálculos.,REL
+NFR-REL-FRF Frecuencia de fallos,,REL
+NFR-REL-MTBF,Mean Time Between Failure,REL
+NFR-REL-PRE Predictibilidad,,REL
+NFR-REL-REC Recuperabilidad,,REL
+NFR-REL-SVF Severidad de fallos,,REL
+NFR-SEC Authenticación,"OAuth, LDAP, 2FA",SEC
+NFR-SUP-ADP Adaptabilidad,,SUP
+NFR-SUP-CNF Configurabilidad,"Contraseñas, Tokens, IDs",SUP
+NFR-SUP-COM Compatibilidad,"Web, Cliente, Sistema operativo, Servidor de aplicaciones",SUP
+NFR-SUP-EXT Extensibilidad,"Manejo de nuevos tipos de datos, protocolos, Entidades de negocio nuevas.",SUP
+NFR-SUP-INS Instalabilidad,,SUP
+NFR-SUP-LOC Localización,Localización (L10N) e Internacionalización (I18N),SUP
+NFR-SUP-MAI Mantenibilidad,"Estándares de diseño, de codificación, mejores prácticas.",SUP
+NFR-SUP-SCA Escalabilidad,Número de usuarios esperados.,SUP
+NFR-SUP-SRV Servicio,,SUP
+NFR-SUP-TST Facilidad de pruebas,"TDD, Mocks",SUP
+NFR-USA-AES Estética,Imágen corporativa,USA
+NFR-USA-CHP Ayuda en contexto,,USA
+NFR-USA-DOC Documentación de usuario,Manuales de uso,USA
+NFR-USA-HFA Factores humanos,,USA
+NFR-USA-TRA Material de entrenamiento,,USA
+NFR-USA-UIC Consistencia UI,Diseño de pantallas,USA
+NFR-USA-WIZ Asistentes,"Popups, Chatbot",USA
+OOS-005 Administración de Proveedores,"Catálogo de Proveedores de suministros para mantenimiento.
+Catálogo de Proveedores que realizan mantenimiento.",005
+OOS-100 Manual de la máquina,"Almacenamiento y Control de los manuales de las maquinarias.
+Control de existencias.
+Control de préstamos.
+Digitalización del manual.",100
+OOS-101 Administración de usuarios,"Registro de usuarios.
+Control de acceso a módulos.
+¿Existe ya un registro de Usuarios al que se pueda acceder?",101
+OOS-102 Administración de Localidades,"CRUD de localidades.
+Asignación de Localidad a una máquina.",102
+OOS-103 Inventario de refacciones,"Mantener un inventario de refacciones, implementos requeridos para un mantenimiento.",103
+OOS-104 Administración de Proveedores,"Proveedor que vendió/Rentó la máquina.
+Catálogo de Proveedores de suministros para mantenimiento.
+Catálogo de Proveedores que realizan mantenimiento.",104
+OOS-105 Solicitud de mantenimiento correctivo,¿Administrar solicitudes de mantenimiento correctivo?,105

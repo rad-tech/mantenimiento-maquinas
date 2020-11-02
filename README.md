@@ -19,7 +19,7 @@ No estoy casado con ninguna metodología, si algo de una te sirve en otra, úsal
    Existe una versión web [nimble](https://sourceforge.net/projects/nimble/) que soporta Cascada y Ágil, pero es más complejo de instalar y configurar, por lo que no lo usaré aquí.
 
 2. [StarUML 3.2.2 (evaluation edition)](http://staruml.io/)<br>
-   Aplicación de escritorio que permite crear diagramas y modelos UML 2.0.
+   Aplicación de escritorio que permite crear diagramas y modelos UML 2.0. Probé la version 4.0 pero noté disminución de performance.
 
 3. [ProjectLibre 1.9.2 (community edition)](https://www.projectlibre.com/)<br>
    Aplicación de escritorio que permite realizar planeación y administración de proyectos basados en cascada.
@@ -27,21 +27,20 @@ No estoy casado con ninguna metodología, si algo de una te sirve en otra, úsal
 4. [LibreOffice](https://www.libreoffice.org/discover/libreoffice/)<br>
    Aplicaciones para Hojas de cálculo y procesamiento de texto, entre otras.
 
+**Aunque no instales las herramientas utilizadas, podrás revisar archivos de imágen o pdf creados para este propósito (vé el Apendice A3.2).**
+
 ## 3. Entrevista inicial con usuario.
 Me encontré en [Youtube](https://youtube.com) un video en el que se explica una forma de realizar un **plan de mantenimiento preventivo de maquinaria**, tan bien desarrollado, que se me ocurrió usarlo como ejemplo de una entrevista inicial con un usuario ficticio que requiere de un software que le permita realizar y ejecutar el plan y te contrata para que hagas el desarrollo. Tiene suficientes elementos para mostrar los diferentes aspectos a considerar en un proyecto de desarrollo de software.
 
 Antes de continuar te invito a que veas el siguiente video [7 PASOS PARA REALIZAR UN PROGRAMA DE MANTENIMIENTO | ISO 9001](https://www.youtube.com/watch?v=umnJt1e9lWM)
 
-Te propongo un reto, estima el tiempo y costo de desarrollo del software para éste cliente, a ojo de pájaro, sin ningún análisis como el que vamos a desarrollar aquí, anótalo. Ahora, haz el ejercicio completo y vé cuanto tiempo y costo obtienes. Tal vez te sorprendas de lo barato que los estabas dejando.
+*Te propongo un reto, estima el tiempo y costo de desarrollo del software para éste cliente, a ojo de pájaro, sin ningún análisis como el que vamos a desarrollar aquí, anótalo. Ahora, haz el ejercicio completo y vé cuanto tiempo y costo obtienes. Tal vez te sorprendas de la diferencia.*
 
 El proceso de estimación es iterativo, no se realiza una tarea y luego otra. Se van construyendo todos los elementos poco a poco ya que están muy interrelacionados. Mientras defines un Requerimiento funcional, se te ocurre un posible riesgo, o algo que estaría fuera del alcance. Cuando estás estimando, te das cuenta que te falta un Requerimiento o una Definición o un Requerimiento no funcional, etc.
 
-La estimación la comienzo determinando las funcionalidades y los requerimientos asociados a ellas. Necesito además definir las pruebas de aceptación, qué cosas parecen estar fuera del alcance, así como definiciones (todo esto en OSRMT). Junto con esto voy identificando riesgos (hoja de cálculo), y el modelo de dominio (staruml). Puedes ir armando la estrucura de trabajo (ProjectLibre), pero prefiero, una vez tengo todo definido, exportar los datos de OSRMT a un archivo CSV, agrupar y ordenar y luego pegar la lista en ProjectLibre, para hacer las estimaciones de tiempo y costo.
+**La estimación la comienzo determinando las funcionalidades y los requerimientos asociados a ellas. Necesito además definir las pruebas de aceptación, qué cosas parecen estar fuera del alcance, así como definiciones (todo esto en OSRMT). Junto con esto voy identificando riesgos (hoja de cálculo), y el modelo de dominio (staruml). Se puede ir armando la estrucura de trabajo (ProjectLibre), pero prefiero, una vez tengo todo definido en OSRMT, exportar los datos a un archivo CSV, agrupar y ordenar y luego pegar la lista en ProjectLibre, para hacer las estimaciones de tiempo y costo.**
 
 ¿Has escuchado de **Parálisis del Análisis**? Es un error cometido en el que nunca comienzas a trabajar realmente, porque nunca terminas de analizar. Lleva tu análisis a un detalle razonable, en el que te sientas cómodo y te permita hacer una estimación realista.
-
-TODO Imagen herramientas
-
 
 ### 3.1 Notas de la entrevista inicial.
 Estas son mis notas obtenidas durante la entrevista inicial.
@@ -88,8 +87,6 @@ Cada uno de los números en la lista anterior será una Capacidad del sistema.
 
 ## 4. Identificación de cosas que quedan fuera del alcance del proyecto.
 Aqui pon cosas que identifiques y que el cliente no ha mencionado, es muy probable que los haya dado por hecho, y cuando presentes la propuesta (o antes, si es posible), pregunta al cliente si quiere incluirlas en el proyecto (entonces se convertiran en capacidades y requerimientos).
-
-TODO OSRMT OOS 
 
 ## 5. Requerimientos no funcionales.
 Utiliza la clasificación **FURPS+** (yo utilizo los mnemónicos indicados) y asocialos a las Capacidades.
@@ -148,8 +145,6 @@ TIPO|DESCRIPCION|MNEMONICO
 **Interface**	|	Web services, Protocolos, Formatos de archivo	|	INT  
 **Physical**	|	Hardware	|	PHY  
 
-TODO OSRMT NFR
-
 ### 6. Características y Requerimientos funcionales.
 
 ### 6.1 Características (Features).
@@ -171,8 +166,6 @@ Prod-Process	|		|	PPRO
 Prod-Artifact	|		|	PART 
 Prod-Service	|		|	PSER 
 
-TODO OSRMT Features
-
 ### 6.2 Requerimientos funcionales.
 
 TIPO|DESCRIPCION|MNEMONICO
@@ -180,16 +173,12 @@ TIPO|DESCRIPCION|MNEMONICO
 **Requirement**	|	Functional requirement	|	FUN  
 **Security**	|	Seguridad, es un requerimiento funcional	|	SEC  
 
-TODO OSRMT FUN, SEC
-
 ## 7. Modelo de Dominio
 Es muy importante, ya que te permite identificar actores, objetos (entidades), relaciones y dependencias entre objetos, etc. En base a él podrás determinar la complejidad de cada requerimiento funcional, operaciones a realizar, atributos por objetos, etc.
 
 **mm-dominio.mdj** (StarUML)
 
 Las clases con color de fondo blanco son las identificadas en la entrevista inicial. Las clases con fondo azul, corresponden a cosas que están fuera del alcance actualmente. Las clases con fondo amarillo son copias de la original (blanco), las uso para evitar cruces de líneas en el modelo.
-
-TODO modelo dominio
 
 ## 8. Priorización
 Los requerimientos iniciales formarán parte de la versión 1.0, a partir de ahí se irán agregando más módulos (los que estan fuera de alcance, si el cliente los acepta) o nuevos requerimientos. 
@@ -218,8 +207,6 @@ Transferir|Transferir el riesgo a un tercero.
 Mitigar|Tomar acciones para disminuir la probabilidad de ocurrencia o impacto del riesgo.
 Aceptar|No se toman acciones hasta que el riesgo ocurre.
 
-TODO riesgos
-
 ## 10. Estimación de tiempo y costos.
 Recuerda, **esta es una estimación inicial**, en circunstancias de **alta incertidumbre** ya que sólo has tenido una entrevista con el cliente, y debe ser actualizado conforme avanza el proyecto, debido principalmente a cambios en el alcance y los requerimientos.
 
@@ -233,16 +220,14 @@ Para estimar tiempo para hacer algo, considera lo siguiente: a) sabes como hacer
 
 En el archihvo **mm-estimacion.pod** (ProjectLibre) presento la estructura de desglose de trabajo y estimación de tiempo y costos.
 
-TODO estimacion
-
 ### 10.1 Costos fijos
-#### Energía eléctrica, teléfono, internet.
+#### 10.1.1 Energía eléctrica, teléfono, internet.
 El importe mensual de cada uno de estos conceptos divídelo entre 30.4, este es el importe diario que pagas, cárgalo al proyecto, por los días que le dediques.
 
-#### 10.2 Amortización de equipos (computadoras, impresoras).
+#### 10.1.2 Amortización de equipos (computadoras, impresoras).
 A estos equipos, contablemente (en México) se les calcula una vida útil de dos años. Divide el valor de compra entre 24 y tendrás la depreciación mensual de tu equipo. Cárgalo al proyecto, por los meses que le dediques.
 
-#### 10.3 Licencias de software.
+#### 10.1.3 Licencias de software.
 Incluye la compra de software y los pagos mensuales/anuales que hagas a GitHub, Heroku, mailtrap, Notion y todo el software que uses para hacer tu trabajo. Igual, calcula el importe mensual y cárgalo al proyecto, por los días que le dediques.
 
 ## 11. Propuesta
@@ -273,6 +258,7 @@ No caigas en la trampa de la Microadministración, te vas a ahorcar tú mismo. M
 
 ## Apéndice 3 - Recursos
 
+### A3.1 Herramientas
 [OSRMT 1.8](https://sourceforge.net/projects/osrmt/)
 
 [ProjectLibre](https://sourceforge.net/projects/projectlibre/)
@@ -283,6 +269,22 @@ No caigas en la trampa de la Microadministración, te vas a ahorcar tú mismo. M
 
 [LibreOffice](https://www.libreoffice.org/discover/libreoffice/)
 
+[mdbtools](https://github.com/mdbtools/mdbtools) ```sudo apt-get install mdbtools``` para extraer la tabla *ARTIFACT* de *starter.mdb*
+```mdb-export starter.mdb artifact >requerimientos.csv```
+
+### A3.2 Archivos del análisis
+
+En la carpeta análisis:<br>
+1. *mm-formato-ficha_manto.png* Imágen del formato de Ficha de mantenimiento usado por el cliente.<br>
+2. *mm-formato-plan_manto.png* Imágen del formato de Plan de mantenimiento usado por el cliente.<br>
+3. *starter.mdb* Base de datos Access usada por OSRMT, contiene las listas de Capacidades, Requerimientos y Pruebas de aceptación.<br>
+4. *mm-requerimientos.csv* Lista de Capacidades y Requerimientos extraídos de *starter.mdb*.<br>
+5. *mm-dominio.jpg* Imágen del diagrama e dominio. Corresponde a *mm-dominio.mdj* de StarUML.<br>
+6. *mm-analisis_riesgos.pdf* Archivo pdf el análisis de riesgos. Corresponde a *mm-analisis_riesgos.ods* de LibreOffice.<br>
+7. *mm-estimacion.pdf* Archivo pdf del cálculo de tiempo y costos. Corresponde a *mm-estimacion.pod* de ProjectLibre.<br>
+8. *mm-propuesta.pdf* Archivo pdf de la propuesta inicial. Corresponde a *mm-propuesta.odt* de LibreOffice.<br>
+
+### A3.3 Libros:
 1. OpenProj The open source solution for managing your projects, Lisa A. Bucki
 2. Mastering Non-Functional Requirements, Sameer Paradkar, Packt Publishing
 3. SWEBOK 3.0 IEEE Computer Society
